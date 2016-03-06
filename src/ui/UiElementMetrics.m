@@ -140,8 +140,13 @@ static UIViewController* m_interfaceOrientationSource;
 {
   if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
     return 10;
-  else
+  else if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
     return 45;
+  else
+  {
+    // OS X support through Chameleon
+    return 45;
+  }
 }
 
 /// @brief Width is for a non-indented top-level cell.

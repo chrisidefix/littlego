@@ -120,8 +120,14 @@ static LayoutManager* sharedManager = nil;
     else
       self.uiType = UITypePhonePortraitOnly;
   }
+  else if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
+  {
+    // iPad
+    self.uiType = UITypePad;
+  }
   else
   {
+    // OS X support through Chameleon: https://github.com/BigZaphod/Chameleon
     self.uiType = UITypePad;
   }
 }

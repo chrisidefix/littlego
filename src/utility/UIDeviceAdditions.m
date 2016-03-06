@@ -49,8 +49,13 @@
   {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
       currentDeviceSuffix = iPhoneDeviceSuffix;
-    else
+    else if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
       currentDeviceSuffix = iPadDeviceSuffix;
+    else
+    {
+      // OS X support through Chameleon 
+      currentDeviceSuffix = iPadDeviceSuffix;
+    }
   }
   return currentDeviceSuffix;
 }
